@@ -15,7 +15,7 @@ import '@/styles/index.scss' // global css
 // 右键菜单
 import contentmenu from 'v-contextmenu'
 import 'v-contextmenu/dist/index.css'
-import './mock' // simulation data
+//import './mock'// simulation data
 
 import './errorLog'// error log
 // font-awesome

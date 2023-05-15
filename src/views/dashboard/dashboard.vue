@@ -10,17 +10,17 @@
       <nx-data-display :option="option"></nx-data-display>
     </div>
     <div class="item">
-      <h4>选项卡展示</h4>
+      <h4>数据分析</h4>
       <nx-data-tabs :option="easyDataOption"></nx-data-tabs>
     </div>
-    <div class="item">
-      <h4>卡片的展示</h4>
-      <nx-data-card :option="easyDataOption0"></nx-data-card>
-    </div>
-    <div class="item">
-      <h4>带数字的展示</h4>
-      <nx-data-icons :option="easyDataOption1"></nx-data-icons>
-    </div>
+<!--    <div class="item">-->
+<!--      <h4>卡片的展示</h4>-->
+<!--      <nx-data-card :option="easyDataOption0"></nx-data-card>-->
+<!--    </div>-->
+<!--    <div class="item">-->
+<!--      <h4>带数字的展示</h4>-->
+<!--      <nx-data-icons :option="easyDataOption1"></nx-data-icons>-->
+<!--    </div>-->
     <div class="item">
       <h4>简易展示</h4>
       <nx-data-icons :option="easyDataOption2"></nx-data-icons>
@@ -52,17 +52,17 @@ export default {
         color: '#15A0FF',
         data: [
           {
-            count: 1000,
-            title: '日活跃数'
+            count: 500,
+            title: '分析数据'
           },
           {
             count: 3000,
-            title: '月活跃数'
-          },
-          {
-            count: 20000,
-            title: '年活跃数'
+            title: '爬取数据'
           }
+          // {
+          //   count: 20000,
+          //   title: '年活跃数'
+          // }
         ]
       },
       easyDataOption: {
@@ -106,68 +106,68 @@ export default {
           }
         ]
       },
-      easyDataOption0: {
-        span: 6,
-        borderColor: '#fff',
-        data: [
-          {
-            name: '姓名1',
-            src: 'static/img/mock/card/card-1.jpg',
-            text: '介绍1'
-          },
-          {
-            name: '姓名2',
-            src: 'static/img/mock/card/card-2.jpg',
-            text: '介绍2'
-          },
-          {
-            name: '姓名3',
-            src: 'static/img/mock/card/card-3.jpg',
-            text: '介绍3'
-          },
-          {
-            name: '姓名4',
-            src: 'static/img/mock/card/card-4.jpg',
-            text: '介绍4'
-          }
-        ]
-      },
-      easyDataOption1: {
-        color: 'rgb(63, 161, 255)',
-        span: 4,
-        data: [
-          {
-            title: '今日注册',
-            count: 12678,
-            icon: 'icon-cuowu'
-          },
-          {
-            title: '今日登录',
-            count: 22139,
-            icon: 'icon-shujuzhanshi2'
-          },
-          {
-            title: '今日订阅',
-            count: 35623,
-            icon: 'icon-jiaoseguanli'
-          },
-          {
-            title: '今日评论',
-            count: 16826,
-            icon: 'icon-caidanguanli'
-          },
-          {
-            title: '今日评论',
-            count: 16826,
-            icon: 'icon-caidanguanli'
-          },
-          {
-            title: '今日评论',
-            count: 16826,
-            icon: 'icon-caidanguanli'
-          }
-        ]
-      },
+      // easyDataOption0: {
+      //   span: 6,
+      //   borderColor: '#fff',
+      //   data: [
+      //     {
+      //       name: '姓名1',
+      //       src: 'static/img/mock/card/card-1.jpg',
+      //       text: '介绍1'
+      //     },
+      //     {
+      //       name: '姓名2',
+      //       src: 'static/img/mock/card/card-2.jpg',
+      //       text: '介绍2'
+      //     },
+      //     {
+      //       name: '姓名3',
+      //       src: 'static/img/mock/card/card-3.jpg',
+      //       text: '介绍3'
+      //     },
+      //     {
+      //       name: '姓名4',
+      //       src: 'static/img/mock/card/card-4.jpg',
+      //       text: '介绍4'
+      //     }
+      //   ]
+      // },
+      // easyDataOption1: {
+      //   color: 'rgb(63, 161, 255)',
+      //   span: 4,
+      //   data: [
+      //     {
+      //       title: '今日注册',
+      //       count: 12678,
+      //       icon: 'icon-cuowu'
+      //     },
+      //     {
+      //       title: '今日登录',
+      //       count: 22139,
+      //       icon: 'icon-shujuzhanshi2'
+      //     },
+      //     {
+      //       title: '今日订阅',
+      //       count: 35623,
+      //       icon: 'icon-jiaoseguanli'
+      //     },
+      //     {
+      //       title: '今日评论',
+      //       count: 16826,
+      //       icon: 'icon-caidanguanli'
+      //     },
+      //     {
+      //       title: '今日评论',
+      //       count: 16826,
+      //       icon: 'icon-caidanguanli'
+      //     },
+      //     {
+      //       title: '今日评论',
+      //       count: 16826,
+      //       icon: 'icon-caidanguanli'
+      //     }
+      //   ]
+      // },
       easyDataOption2: {
         color: 'rgb(63, 161, 255)',
         span: 4,

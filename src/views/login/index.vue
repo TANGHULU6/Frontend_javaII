@@ -13,7 +13,7 @@
     </div>
     <div class="login-border  animated fadeInRight">
       <div class="login-main">
-        <h4 class="login-title">登录{{website.title}}
+        <h4 class="login-title">登录StackOverflow_Statistics
         </h4>
         <el-tabs v-model="activeName">
           <el-tab-pane label="用户密码" name="user">
