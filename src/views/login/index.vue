@@ -13,25 +13,26 @@
     </div>
     <div class="login-border  animated fadeInRight">
       <div class="login-main">
-        <h4 class="login-title">登录StackOverflow_Statistics
+        <h4 class="login-title">进入StackOverflow_Statistics
         </h4>
         <el-tabs v-model="activeName">
-          <el-tab-pane label="用户密码" name="user">
+          <el-tab-pane label="点击进入" name="user">
             <userLogin></userLogin>
           </el-tab-pane>
-          <el-tab-pane label="短信验证码" name="code">
-            <codeLogin></codeLogin>
-          </el-tab-pane>
+<!--          <el-tab-pane label="短信验证码" name="code">-->
+<!--            <codeLogin></codeLogin>-->
+<!--          </el-tab-pane>-->
         </el-tabs>
       </div>
     </div>
-
   </div>
+
 </template>
 <script>
 import userLogin from './userlogin'
 import codeLogin from './codelogin'
 import { mapGetters } from 'vuex'
+import * as path from "path";
 export default {
   name: 'login',
   components: {
@@ -49,7 +50,15 @@ export default {
     ...mapGetters(['website'])
   },
   props: [],
-  methods: {}
+  methods: {
+    goToLogin() {
+      // 在这里处理进入登录界面的逻辑
+      // 可以使用编程式导航进行路由跳转
+      console.log('进入登录界面按钮点击');
+      this.$router.push({path:'/dashboard/dashboard'})
+
+    }
+  }
 }
 </script>
 

@@ -1,9 +1,10 @@
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           <template>
+<template>
   <div id="app">
     <!--登入动画-->
     <transition name="rotate-fall">
     <router-view  class="app-router-view"></router-view>
     </transition>
+<!--    <router-link to="@//questons"></router-link>-->
   </div>
 </template>
 
