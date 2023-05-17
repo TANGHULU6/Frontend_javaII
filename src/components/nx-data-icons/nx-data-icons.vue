@@ -9,7 +9,10 @@
             </div>
             <div class="item-info">
               <span>{{item.title}}</span>
-              <h3 :style="{color:color}"><nx-count-up :start="14" :end="item.count"/></h3>
+<!--              <h3 :style="{color:color}"><nx-count-up :start="14" :end="item.count"/></h3>-->
+              <h3 :style="{color: color}">
+                {{ Number.isInteger(item.count) ? item.count : item.count.toFixed(3) }}
+              </h3>
             </div>
           </div>
         </el-col>

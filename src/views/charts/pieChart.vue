@@ -3,21 +3,43 @@
 </template>
 
 <script>
-  export default {
-    data() {
-      return {
-        chartData: {
-          columns: ['日期', '访问用户'],
-          rows: [
-            { '日期': '1/1', '访问用户': 1393 },
-            { '日期': '1/2', '访问用户': 3530 },
-            { '日期': '1/3', '访问用户': 2923 },
-            { '日期': '1/4', '访问用户': 1723 },
-            { '日期': '1/5', '访问用户': 3792 },
-            { '日期': '1/6', '访问用户': 4593 }
-          ]
-        }
+import axios from "axios";
+import Vue from "vue";
+
+export default {
+  data() {
+    return {
+      chartData: {
+        columns: [],
+        rows: []
       }
     }
+  },
+  mounted() {
+    axios.get('http://localhost:8080/questions').then(resp => {
+
+      const groupedData = {
+        withAcceptedAnswer: [],
+        withoutAcceptedAnswer: []
+      };
+
+      resp.data.forEach(item => {
+        if (item.acceptedAnswerId != null) {
+          groupedData.withAcceptedAnswer.push(item);
+        } else {
+          groupedData.withoutAcceptedAnswer.push(item);
+        }
+      });
+
+      this.chartData.columns = ['category', 'count'];
+      //let sum=groupedData.withAcceptedAnswer.length+groupedData.withoutAcceptedAnswer.length;
+      this.chartData.rows = [
+        { category: 'have Accepted Answer', count: groupedData.withAcceptedAnswer.length },
+        { category: 'not have Accepted Answer', count: groupedData.withoutAcceptedAnswer.length }
+      ];
+
+      Vue.set(this, 'chartData', this.chartData);
+    });
   }
+}
 </script>

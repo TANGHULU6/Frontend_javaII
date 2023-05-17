@@ -35,6 +35,7 @@ import nxDataCard from '@/components/nx-data-card/nx-data-card'
 import nxDataTabs from '@/components/nx-data-tabs/nx-data-tabs'
 import nxDataIcons from '@/components/nx-data-icons/nx-data-icons'
 import nxGithubCorner from '@/components/nx-github-corner'
+import axios from "axios";
 export default {
   name: 'report',
   components: {
@@ -69,16 +70,16 @@ export default {
         span: 6,
         data: [
           {
-            title: '分类统计',
+            title: '没有回答的问题数',
             subtitle: '实时',
             count: 7993,
             allcount: 10222,
-            text: '当前分类总记录数',
+            text: '最热门问题收获回答',
             color: 'rgb(49, 180, 141)',
             key: '类'
           },
           {
-            title: '附件统计',
+            title: '平均一个问题收获回答',
             subtitle: '实时',
             count: 3112,
             allcount: 10222,
@@ -138,7 +139,7 @@ export default {
       //   data: [
       //     {
       //       title: '今日注册',
-      //       count: 12678,
+      //       count: 0,
       //       icon: 'icon-cuowu'
       //     },
       //     {
@@ -174,33 +175,33 @@ export default {
         discount: true,
         data: [
           {
-            title: '错误日志',
-            count: 12678,
+            title: '没有回答的问题百分比%',
+            count: 0,
             icon: 'icon-cuowu'
           },
           {
-            title: '数据展示',
-            count: 12678,
+            title: '最热门问题收获回答',
+            count: 0,
             icon: 'icon-shujuzhanshi2'
           },
           {
-            title: '权限管理',
-            count: 12678,
+            title: '平均一个问题收获回答',
+            count: 0.01,
             icon: 'icon-jiaoseguanli'
           },
           {
             title: '菜单管理',
-            count: 12678,
+            count: 0,
             icon: 'icon-caidanguanli'
           },
           {
             title: '权限测试',
-            count: 12678,
+            count: 0,
             icon: 'icon-caidanguanli'
           },
           {
             title: '错误页面',
-            count: 12678,
+            count: 0,
             icon: 'icon-caidanguanli'
           }
         ]
@@ -208,9 +209,49 @@ export default {
     }
   },
   created() {},
-  watch: {},
-  mounted() {},
-  computed: {}
+  watch: {
+    // 'easyDataOption2.data': {
+    //   handler: function(newValue, oldValue) {
+    //     console.log('data 变化了', newValue, oldValue);
+    //     if (newValue[0] && newValue[0].count) {
+    //       console.log('count 变化了', newValue[0].count);
+    //     }
+    //   },
+    //   deep: true // 监听对象的变化
+    // }
+  },
+
+  mounted() {
+    this.fetchData() // 在组件挂载后调用 fetchData 方法获取实时数据
+  },
+  computed: {
+    // formattedCount() {
+    //   return this.easyDataOption2.data[2].count.toFixed(2);
+    // }
+  },
+
+  methods: {
+    fetchData() {
+      // 发起 API 请求，获取最新的 count 数据
+      // 使用 axios 或其他网络请求库
+      axios.get('http://localhost:8080/questions/noAnswerQuestionCount').then(response => {
+        // 更新 count 字段
+        this.easyDataOption2.data[0].count = response.data*100/this.option.data[0].count
+      }).catch(error => {
+        console.error('Error:', error)
+      })
+      axios.get('http://localhost:8080/questions/maxAnswerCount').then(response => {
+        this.easyDataOption2.data[1].count = response.data
+      }).catch(error => {
+        console.error('Error:', error)
+      })
+      axios.get('http://localhost:8080/questions/avgAnswerCount').then(response => {
+        this.easyDataOption2.data[2].count = response.data
+      }).catch(error => {
+        console.error('Error:', error)
+      })
+    }
+  }
 }
 </script>
 

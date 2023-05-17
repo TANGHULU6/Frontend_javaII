@@ -496,8 +496,8 @@ export const constantRouterMap = [
         path: 'complex-table',
         name: 'complex-table',
         component: () => import('@/views/table/complex-table'),
-        meta: { title: 'complexTable' }
-      }
+        meta: { title: 'complexTable',icon: 'table' }
+      },
       // {
       //   path: 'TreeTable',
       //   name: 'TreeTable',
