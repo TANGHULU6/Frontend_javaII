@@ -77,7 +77,7 @@ export const constantRouterMap = [
         path: 'columnar',
         name: 'columnar',
         component: () => import('@/views/charts/columnar'),
-        meta: { title: 'columnar', icon: 'columnar' }
+        meta: { title: 'answers', icon: 'columnar' }
       },
       {
         path: 'barGraph',
@@ -89,7 +89,7 @@ export const constantRouterMap = [
         path: 'pieChart',
         name: 'pieChart',
         component: () => import('@/views/charts/pieChart'),
-        meta: { title: 'pieChart', icon: 'pieChart' }
+        meta: { title: 'ac answers', icon: 'pieChart' }
       },
       {
         path: 'ringChart',

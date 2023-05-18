@@ -72,20 +72,20 @@ export default {
           {
             title: '没有回答的问题数',
             subtitle: '实时',
-            count: 7993,
-            allcount: 10222,
+            count: 0,
+            allcount: 3000,
             text: '最热门问题收获回答',
             color: 'rgb(49, 180, 141)',
-            key: '类'
+            key: '问'
           },
           {
             title: '平均一个问题收获回答',
             subtitle: '实时',
-            count: 3112,
-            allcount: 10222,
+            count: 0,
+            allcount: 3000,
             text: '当前上传的附件数',
             color: 'rgb(56, 161, 242)',
-            key: '附'
+            key: '均'
           },
           {
             title: '文章统计',
