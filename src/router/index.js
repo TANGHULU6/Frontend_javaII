@@ -80,6 +80,12 @@ export const constantRouterMap = [
         meta: { title: 'answers', icon: 'columnar' }
       },
       {
+        path: 'columnChart',
+        name: 'columnChart',
+        component: () => import('@/views/charts/columnChart'),
+        meta: { title: 'answers Distribution', icon: 'columnar' }
+      },
+      {
         path: 'barGraph',
         name: 'barGraph',
         component: () => import('@/views/charts/barGraph'),

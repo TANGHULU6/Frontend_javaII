@@ -52,6 +52,7 @@ export default {
     dashboard: '首页',
     DiscountFigure: '折线图',
     columnar: '柱状图',
+    columnChart : '回答数分布',
     treeMenu: '树形菜单',
     wel: '动态文字',
     Lockscreenpage: '锁屏页',

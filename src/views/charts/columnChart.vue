@@ -1,7 +1,7 @@
 <template>
   <div>
     <p class="warn-content">
-      <a href="https://v-charts.js.org/#/" target="_blank">charts组件参考v-charts
+      <a href="https://v-charts.js.org/#/" target="_blank">answer count distribution
       </a>
     </p>
     <ve-histogram :data="chartData"></ve-histogram>
@@ -16,14 +16,17 @@ export default {
   data() {
     return {
       chartData: {
-        columns: ['questionId','answerCount'],
+        columns: ['answer_count','count'],
         rows: []
       }
     }
   },
   mounted(){
-    axios.get('http://localhost:8080/questions').then( (resp)=> {
-      this.chartData.rows= resp.data
+    axios.get('http://localhost:8080/questions/answerCountDistribution').then( (resp)=> {
+      this.chartData.rows = resp.data.map(obj => ({
+        answer_count: obj[0],
+        count: obj[1]
+      }));
 
       console.log( this.chartData);
       Vue.set(this, 'chartData', this.chartData);
