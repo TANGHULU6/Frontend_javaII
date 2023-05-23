@@ -86,10 +86,34 @@ export const constantRouterMap = [
         meta: { title: 'answers Distribution', icon: 'columnar' }
       },
       {
+        path: 'resolutionTime',
+        name: 'resolutionTime',
+        component: () => import('@/views/charts/resolutionTime'),
+        meta: { title: 'resolution-time Distribution', icon: 'barGraph' }
+      },
+      {
         path: 'barGraph',
         name: 'barGraph',
         component: () => import('@/views/charts/barGraph'),
         meta: { title: 'barGraph', icon: 'barGraph' }
+      },
+      {
+        path: 'withjava',
+        name: 'withjava',
+        component: () => import('@/views/charts/With-Java-Frequency'),
+        meta: { title: 'With java tag', icon: 'barGraph' }
+      },
+      {
+        path: 'combination-view',
+        name: 'combination-view',
+        component: () => import('@/views/charts/tag-combination-views'),
+        meta: { title: 'tag-combination views', icon: 'barGraph' }
+      },
+      {
+        path: 'combination-upvotes',
+        name: 'combination-upvotes',
+        component: () => import('@/views/charts/tag-combination-upvotes'),
+        meta: { title: 'tag-combination upvotes', icon: 'barGraph' }
       },
       {
         path: 'pieChart',
@@ -98,65 +122,71 @@ export const constantRouterMap = [
         meta: { title: 'ac answers', icon: 'pieChart' }
       },
       {
+        path: 'pieChart1',
+        name: 'pieChart1',
+        component: () => import('@/views/charts/controversial-problems'),
+        meta: { title: 'controversial answers', icon: 'pieChart' }
+      },
+      {
         path: 'ringChart',
         name: 'ringChart',
         component: () => import('@/views/charts/ringChart'),
         meta: { title: 'ringChart', icon: 'ringChart' }
       },
-      {
-        path: 'waterfallCharts',
-        name: 'waterfallCharts',
-        component: () => import('@/views/charts/waterfallCharts'),
-        meta: { title: 'waterfallCharts', icon: 'waterfallCharts' }
-      },
-      {
-        path: 'funnelCharts',
-        name: 'funnelCharts',
-        component: () => import('@/views/charts/funnelCharts'),
-        meta: { title: 'funnelCharts', icon: 'funnelCharts' }
-      },
-      {
-        path: 'radarCharts',
-        name: 'radarCharts',
-        component: () => import('@/views/charts/radarCharts'),
-        meta: { title: 'radarCharts', icon: 'radarCharts' }
-      },
-      {
-        path: 'sankeyChart',
-        name: 'sankeyChart',
-        component: () => import('@/views/charts/sankeyChart'),
-        meta: { title: 'sankeyChart', icon: 'sankeyChart' }
-      },
-      {
-        path: 'heatmapChart',
-        name: 'heatmapChart',
-        component: () => import('@/views/charts/heatmapChart'),
-        meta: { title: 'heatmapChart', icon: 'heatmapChart' }
-      },
-      {
-        path: 'scatterChart',
-        name: 'scatterChart',
-        component: () => import('@/views/charts/scatterChart'),
-        meta: { title: 'scatterChart', icon: 'scatterChart' }
-      },
-      {
-        path: 'candleChart',
-        name: 'candleChart',
-        component: () => import('@/views/charts/candleChart'),
-        meta: { title: 'candleChart', icon: 'candleChart' }
-      },
-      {
-        path: 'gaugeChart',
-        name: 'gaugeChart',
-        component: () => import('@/views/charts/gaugeChart'),
-        meta: { title: 'gaugeChart', icon: 'gaugeChart' }
-      },
-      {
-        path: 'treeChart',
-        name: 'treeChart',
-        component: () => import('@/views/charts/treeChart'),
-        meta: { title: 'treeChart', icon: 'treeChart' }
-      }
+      // {
+      //   path: 'waterfallCharts',
+      //   name: 'waterfallCharts',
+      //   component: () => import('@/views/charts/waterfallCharts'),
+      //   meta: { title: 'waterfallCharts', icon: 'waterfallCharts' }
+      // },
+      // {
+      //   path: 'funnelCharts',
+      //   name: 'funnelCharts',
+      //   component: () => import('@/views/charts/funnelCharts'),
+      //   meta: { title: 'funnelCharts', icon: 'funnelCharts' }
+      // },
+      // {
+      //   path: 'radarCharts',
+      //   name: 'radarCharts',
+      //   component: () => import('@/views/charts/radarCharts'),
+      //   meta: { title: 'radarCharts', icon: 'radarCharts' }
+      // },
+      // {
+      //   path: 'sankeyChart',
+      //   name: 'sankeyChart',
+      //   component: () => import('@/views/charts/sankeyChart'),
+      //   meta: { title: 'sankeyChart', icon: 'sankeyChart' }
+      // },
+      // {
+      //   path: 'heatmapChart',
+      //   name: 'heatmapChart',
+      //   component: () => import('@/views/charts/heatmapChart'),
+      //   meta: { title: 'heatmapChart', icon: 'heatmapChart' }
+      // },
+      // {
+      //   path: 'scatterChart',
+      //   name: 'scatterChart',
+      //   component: () => import('@/views/charts/scatterChart'),
+      //   meta: { title: 'scatterChart', icon: 'scatterChart' }
+      // },
+      // {
+      //   path: 'candleChart',
+      //   name: 'candleChart',
+      //   component: () => import('@/views/charts/candleChart'),
+      //   meta: { title: 'candleChart', icon: 'candleChart' }
+      // },
+      // {
+      //   path: 'gaugeChart',
+      //   name: 'gaugeChart',
+      //   component: () => import('@/views/charts/gaugeChart'),
+      //   meta: { title: 'gaugeChart', icon: 'gaugeChart' }
+      // },
+      // {
+      //   path: 'treeChart',
+      //   name: 'treeChart',
+      //   component: () => import('@/views/charts/treeChart'),
+      //   meta: { title: 'treeChart', icon: 'treeChart' }
+      // }
     ]
   },
   // 地图

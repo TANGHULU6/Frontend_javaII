@@ -53,11 +53,11 @@ export default {
         color: '#15A0FF',
         data: [
           {
-            count: 500,
+            count: 600,
             title: '分析数据'
           },
           {
-            count: 3000,
+            count: 600,
             title: '爬取数据'
           }
           // {
