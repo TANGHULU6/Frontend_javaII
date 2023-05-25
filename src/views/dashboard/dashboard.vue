@@ -70,11 +70,11 @@ export default {
         span: 6,
         data: [
           {
-            title: '没有回答的问题数',
+            title: '最热门问题收获回答',
             subtitle: '实时',
             count: 0,
             allcount: 3000,
-            text: '最热门问题收获回答',
+            text: '没有回答的问题数',
             color: 'rgb(49, 180, 141)',
             key: '问'
           },
@@ -82,29 +82,29 @@ export default {
             title: '平均一个问题收获回答',
             subtitle: '实时',
             count: 0,
-            allcount: 3000,
-            text: '当前上传的附件数',
+            allcount: 0,
+            text: '精确值',
             color: 'rgb(56, 161, 242)',
             key: '均'
           },
           {
-            title: '文章统计',
+            title: '活跃用户',
             subtitle: '实时',
-            count: 908,
+            count: 0,
             allcount: 10222,
-            text: '评论次数',
+            text: '最活跃用户',
             color: 'rgb(117, 56, 199)',
-            key: '评'
+            key: '水'
           },
-          {
-            title: '新闻统计',
-            subtitle: '实时',
-            count: 908,
-            allcount: 10222,
-            text: '评论次数',
-            color: 'rgb(59, 103, 164)',
-            key: '新'
-          }
+          // {
+          //   title: '新闻统计',
+          //   subtitle: '实时',
+          //   count: 908,
+          //   allcount: 10222,
+          //   text: '评论次数',
+          //   color: 'rgb(59, 103, 164)',
+          //   key: '新'
+          // }
         ]
       },
       // easyDataOption0: {
@@ -189,21 +189,21 @@ export default {
             count: 0.01,
             icon: 'icon-jiaoseguanli'
           },
-          {
-            title: '菜单管理',
-            count: 0,
-            icon: 'icon-caidanguanli'
-          },
-          {
-            title: '权限测试',
-            count: 0,
-            icon: 'icon-caidanguanli'
-          },
-          {
-            title: '错误页面',
-            count: 0,
-            icon: 'icon-caidanguanli'
-          }
+          // {
+          //   title: '菜单管理',
+          //   count: 0,
+          //   icon: 'icon-caidanguanli'
+          // },
+          // {
+          //   title: '权限测试',
+          //   count: 0,
+          //   icon: 'icon-caidanguanli'
+          // },
+          // {
+          //   title: '错误页面',
+          //   count: 0,
+          //   icon: 'icon-caidanguanli'
+          // }
         ]
       }
     }
@@ -237,17 +237,38 @@ export default {
       axios.get('http://localhost:8080/questions/noAnswerQuestionCount').then(response => {
         // 更新 count 字段
         this.easyDataOption2.data[0].count = response.data*100/this.option.data[0].count
+        this.easyDataOption.data[0].allcount=response.data*100/this.option.data[0].count
       }).catch(error => {
         console.error('Error:', error)
       })
       axios.get('http://localhost:8080/questions/maxAnswerCount').then(response => {
         this.easyDataOption2.data[1].count = response.data
+        this.easyDataOption.data[0].count=response.data
       }).catch(error => {
         console.error('Error:', error)
       })
       axios.get('http://localhost:8080/questions/avgAnswerCount').then(response => {
         this.easyDataOption2.data[2].count = response.data
+        this.easyDataOption.data[1].count=response.data
+        this.easyDataOption.data[1].allcount=response.data
       }).catch(error => {
+        console.error('Error:', error)
+      })
+      axios.get('http://localhost:8080/questions/mostActiveUsersPerQuestion').then(response => {
+        this.easyDataOption.data[2].text = "最活跃用户: "+response.data.map(obj => ({
+          theGuy: obj[5]
+        }))[0].theGuy;
+        this.easyDataOption.data[2].allcount = response.data.map(obj => ({
+          theGuy: obj[6]
+        }))[0].theGuy;
+      }).catch(error => {
+        console.error('Error:', error)
+      })
+      axios.get('http://localhost:8080/questions/countUniqueUsersPerQuestion').then(response => {
+        this.easyDataOption.data[2].count = response.data[0][1];//!!!!!!!!!!!
+        console.log(response.data);
+        }
+      ).catch(error => {
         console.error('Error:', error)
       })
     }

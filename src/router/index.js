@@ -67,12 +67,12 @@ export const constantRouterMap = [
     name: 'charts',
     meta: { title: 'charts', icon: 'chart' },
     children: [
-      {
-        path: 'DiscountFigure',
-        name: 'DiscountFigure',
-        component: () => import('@/views/charts/DiscountFigure'),
-        meta: { title: 'DiscountFigure', icon: 'discounting' }
-      },
+      // {
+      //   path: 'DiscountFigure',
+      //   name: 'DiscountFigure',
+      //   component: () => import('@/views/charts/DiscountFigure'),
+      //   meta: { title: 'DiscountFigure', icon: 'discounting' }
+      // },
       {
         path: 'columnar',
         name: 'columnar',
@@ -91,12 +91,12 @@ export const constantRouterMap = [
         component: () => import('@/views/charts/resolutionTime'),
         meta: { title: 'resolution-time Distribution', icon: 'barGraph' }
       },
-      {
-        path: 'barGraph',
-        name: 'barGraph',
-        component: () => import('@/views/charts/barGraph'),
-        meta: { title: 'barGraph', icon: 'barGraph' }
-      },
+      // {
+      //   path: 'barGraph',
+      //   name: 'barGraph',
+      //   component: () => import('@/views/charts/barGraph'),
+      //   meta: { title: 'barGraph', icon: 'barGraph' }
+      // },
       {
         path: 'withjava',
         name: 'withjava',
@@ -139,12 +139,12 @@ export const constantRouterMap = [
         component: () => import('@/views/charts/most-active-user'),
         meta: { title: 'Most active user', icon: 'columnar' }
       },
-      {
-        path: 'ringChart',
-        name: 'ringChart',
-        component: () => import('@/views/charts/ringChart'),
-        meta: { title: 'ringChart', icon: 'ringChart' }
-      },
+      // {
+      //   path: 'ringChart',
+      //   name: 'ringChart',
+      //   component: () => import('@/views/charts/ringChart'),
+      //   meta: { title: 'ringChart', icon: 'ringChart' }
+      // },
       // {
       //   path: 'waterfallCharts',
       //   name: 'waterfallCharts',
