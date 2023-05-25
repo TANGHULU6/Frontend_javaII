@@ -134,10 +134,16 @@ export const constantRouterMap = [
         meta: { title: 'Users-Distribution', icon: 'columnar' }
       },
       {
-        path: 'users1',
-        name: 'users1',
+        path: 'usersActive',
+        name: 'usersActive',
         component: () => import('@/views/charts/most-active-user'),
         meta: { title: 'Most active user', icon: 'columnar' }
+      },
+      {
+        path: 'API',
+        name: 'API',
+        component: () => import('@/views/charts/body.vue'),
+        meta: { title: 'API analytics', icon: 'barGraph' }
       },
       // {
       //   path: 'ringChart',
