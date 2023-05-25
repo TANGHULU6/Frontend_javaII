@@ -1,5 +1,11 @@
 <template>
+  <div>
+    <p class="warn-content">
+      <a href="https://v-charts.js.org/#/" target="_blank">tag组合的查看数
+      </a>
+    </p>
     <ve-bar :data="chartData"></ve-bar>
+  </div>
 </template>
 
 <script>

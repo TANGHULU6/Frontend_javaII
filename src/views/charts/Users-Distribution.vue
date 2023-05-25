@@ -1,5 +1,11 @@
 <template>
-    <ve-bar :data="chartData"></ve-bar>
+  <div>
+  <p class="warn-content">
+    <a href="https://v-charts.js.org/#/" target="_blank">参与讨论的用户分布
+    </a>
+  </p>
+    <ve-histogram :data="chartData"></ve-histogram>
+  </div>
 </template>
 
 <script>
@@ -10,7 +16,7 @@ export default {
   data() {
     return {
       chartData: {
-        columns: ['id','count'],
+        columns: ['id','count','answer_user_count','comment_user_count'],
         rows: []
       }
     }
@@ -19,7 +25,9 @@ export default {
     axios.get('http://localhost:8080/questions/countUniqueUsersPerQuestion').then( (resp)=> {
       this.chartData.rows = resp.data.map(obj => ({
         id: obj[0],
-        count: obj[1]
+        count: obj[1],
+        answer_user_count: obj[2],
+        comment_user_count: obj[3]
       }));
 
       console.log( this.chartData);

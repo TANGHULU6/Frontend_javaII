@@ -1,5 +1,12 @@
 <template>
-  <ve-bar :data="chartData"></ve-bar>
+  <div>
+    <p class="warn-content">
+      <a href="https://v-charts.js.org/#/" target="_blank">最活跃的用户
+      </a>
+    </p>
+    <ve-bar :data="chartData"></ve-bar>
+  </div>
+
 </template>
 
 <script>

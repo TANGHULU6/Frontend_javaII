@@ -1,5 +1,11 @@
 <template>
+  <div>
+    <p class="warn-content">
+      <a href="https://v-charts.js.org/#/" target="_blank">哪些 tags 经常和 Java tag 一起出现
+      </a>
+    </p>
     <ve-bar :data="chartData"></ve-bar>
+  </div>
 </template>
 
 <script>

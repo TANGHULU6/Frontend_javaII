@@ -1,7 +1,7 @@
 <template>
   <div>
     <p class="warn-content">
-      <a href="https://v-charts.js.org/#/" target="_blank">charts组件参考v-charts
+      <a href="https://v-charts.js.org/#/" target="_blank">问题回答数分布
       </a>
     </p>
     <ve-histogram :data="chartData"></ve-histogram>
@@ -13,11 +13,22 @@ import axios from "axios";
 import Vue from "vue";
 
 export default {
+
   data() {
     return {
       chartData: {
         columns: ['questionId','answerCount'],
         rows: []
+      },
+      chartExtend: {
+        xAxis: {
+          axisLabel: {
+            interval: 0,
+            formatter: function(value) {
+              return value.split("").join("\n");
+            }
+          }
+        }
       }
     }
   },

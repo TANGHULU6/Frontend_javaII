@@ -128,6 +128,18 @@ export const constantRouterMap = [
         meta: { title: 'controversial answers', icon: 'pieChart' }
       },
       {
+        path: 'users',
+        name: 'users',
+        component: () => import('@/views/charts/Users-Distribution'),
+        meta: { title: 'Users-Distribution', icon: 'columnar' }
+      },
+      {
+        path: 'users1',
+        name: 'users1',
+        component: () => import('@/views/charts/most-active-user'),
+        meta: { title: 'Most active user', icon: 'columnar' }
+      },
+      {
         path: 'ringChart',
         name: 'ringChart',
         component: () => import('@/views/charts/ringChart'),
@@ -438,36 +450,36 @@ export const constantRouterMap = [
   //   ]
   // },
   // 表单
-  {
-    path: '/form',
-    component: Layout,
-    redirect: '/form/BaseForm',
-    name: 'form',
-    meta: {
-      title: 'form',
-      icon: 'form'
-    },
-    children: [
-      {
-        path: 'BaseForm',
-        name: 'BaseForm',
-        component: () => import('@/views/form/BaseForm'),
-        meta: { title: 'BaseForm' }
-      },
-      {
-        path: 'VueEditor',
-        name: 'VueEditor',
-        component: () => import('@/views/form/VueEditor'),
-        meta: { title: 'VueEditor' }
-      },
-      {
-        path: 'Upload',
-        name: 'Upload',
-        component: () => import('@/views/form/Upload'),
-        meta: { title: 'Upload' }
-      }
-    ]
-  },
+  // {
+  //   path: '/form',
+  //   component: Layout,
+  //   redirect: '/form/BaseForm',
+  //   name: 'form',
+  //   meta: {
+  //     title: 'form',
+  //     icon: 'form'
+  //   },
+  //   children: [
+  //     {
+  //       path: 'BaseForm',
+  //       name: 'BaseForm',
+  //       component: () => import('@/views/form/BaseForm'),
+  //       meta: { title: 'BaseForm' }
+  //     },
+  //     {
+  //       path: 'VueEditor',
+  //       name: 'VueEditor',
+  //       component: () => import('@/views/form/VueEditor'),
+  //       meta: { title: 'VueEditor' }
+  //     },
+  //     {
+  //       path: 'Upload',
+  //       name: 'Upload',
+  //       component: () => import('@/views/form/Upload'),
+  //       meta: { title: 'Upload' }
+  //     }
+  //   ]
+  // },
   // 右菜单
   // {
   //   path: '/contextmenu',

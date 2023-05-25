@@ -1,5 +1,11 @@
 <template>
+  <div>
+  <p class="warn-content">
+    <a href="https://v-charts.js.org/#/" target="_blank">没有ac回答的问题占比
+    </a>
+  </p>
   <ve-pie :data="chartData"></ve-pie>
+  </div>
 </template>
 
 <script>

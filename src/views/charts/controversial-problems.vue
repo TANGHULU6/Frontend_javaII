@@ -1,5 +1,11 @@
 <template>
+  <div>
+    <p class="warn-content">
+      <a href="https://v-charts.js.org/#/" target="_blank">含有 non-accepted answer 的 upvote 数高于 accepted answer 的问题的百分比
+      </a>
+    </p>
   <ve-pie :data="chartData"></ve-pie>
+  </div>
 </template>
 
 

@@ -1,7 +1,7 @@
 <template>
   <div>
     <p class="warn-content">
-      <a href="https://v-charts.js.org/#/" target="_blank">answer count distribution
+      <a href="https://v-charts.js.org/#/" target="_blank">answer count distribution(x轴为回答数，y轴为同样回答数的问题数)
       </a>
     </p>
     <ve-histogram :data="chartData"></ve-histogram>
