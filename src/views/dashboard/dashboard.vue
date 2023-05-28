@@ -265,7 +265,7 @@ export default {
         console.error('Error:', error)
       })
       axios.get('http://localhost:8080/questions/countUniqueUsersPerQuestion').then(response => {
-        this.easyDataOption.data[2].count = response.data[0][1];//!!!!!!!!!!!
+        this.easyDataOption.data[2].count = response.data[0][4];//!!!!!!!!!!!
         console.log(response.data);
         }
       ).catch(error => {
