@@ -4,7 +4,7 @@
       <a href="https://v-charts.js.org/#/" target="_blank">展示问题从提出到解决 (answer accepted time – question post time) 的时间间隔分布
       </a>
     </p>
-    <ve-bar :data="chartData"></ve-bar>
+    <ve-histogram :data="chartData"></ve-histogram>
   </div>
 </template>
 

@@ -91,6 +91,12 @@ export const constantRouterMap = [
         component: () => import('@/views/charts/resolutionTime'),
         meta: { title: 'resolution-time Distribution', icon: 'barGraph' }
       },
+      {
+        path: 'resolutionTime1',
+        name: 'resolutionTime1',
+        component: () => import('@/views/charts/resolutionTime-plus'),
+        meta: { title: 'resolution-time Distribution Statics', icon: 'barGraph' }
+      },
       // {
       //   path: 'barGraph',
       //   name: 'barGraph',
