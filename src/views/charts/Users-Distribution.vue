@@ -25,7 +25,7 @@ export default {
     axios.get('http://localhost:8080/questions/countUniqueUsersPerQuestion').then( (resp)=> {
       this.chartData.rows = resp.data.map(obj => ({
         id: obj[0],
-        count: obj[1],
+        total_user_count: obj[1],
         answer_user_count: obj[2],
         comment_user_count: obj[3]
       }));
