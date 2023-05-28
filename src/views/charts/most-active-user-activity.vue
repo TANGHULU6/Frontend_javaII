@@ -1,7 +1,7 @@
 <template>
   <div>
     <p class="warn-content">
-      <a href="https://v-charts.js.org/#/" target="_blank">每个问题最活跃的用户（评论数和回答数）
+      <a href="https://v-charts.js.org/#/" target="_blank">每个问题最活跃的用户
       </a>
     </p>
     <ve-histogram
@@ -20,14 +20,12 @@ export default {
     let that=this;
     return {
       chartData: {
-        columns: ['id','user_answer_cnt','user_comment_cnt'],
+        columns: ['id','activity_cnt'],
         rows: [],
       },
       chartDataTooltip: {
         formatter: function (data) {
-          // console.log(data)
-          // console.log(that.rowProperties)
-          return `${that.rowProperties[data.name-1].question_id}<br>(most_active_answer_user)${that.rowProperties[data.name-1].most_active_answer_user}: ${that.rowProperties[data.name-1].user_answer_cnt}<br>(most_active_comment_user)${that.rowProperties[data.name-1].most_active_comment_user}: ${that.rowProperties[data.name-1].user_comment_cnt}`;
+          return `${that.rowProperties[data.name-1].question_id}<br>(most_active_answer_user)${that.rowProperties[data.name-1].most_active_answer_user}: ${that.rowProperties[data.name-1].user_answer_cnt}<br>(most_active_comment_user)${that.rowProperties[data.name-1].most_active_comment_user}: ${that.rowProperties[data.name-1].user_comment_cnt}<br>(most_active_user)${that.rowProperties[data.name-1].most_users_per_Q}: ${that.rowProperties[data.name-1].activity_cnt}`;
         }
       },
 
@@ -44,7 +42,9 @@ export default {
         most_active_answer_user: obj[1],
         user_answer_cnt: obj[2],
         most_active_comment_user: obj[3],
-        user_comment_cnt: obj[4]
+        user_comment_cnt: obj[4],
+        most_users_per_Q: obj[7],
+        activity_cnt : obj[8]
       }));
 
       this.chartData.rows = rows;

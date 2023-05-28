@@ -257,7 +257,7 @@ export default {
       axios.get('http://localhost:8080/questions/mostActiveUsersPerQuestion').then(response => {
         this.easyDataOption.data[2].text = "最活跃用户: "+response.data.map(obj => ({
           theGuy: obj[5]
-        }))[0].theGuy;
+        }))[0].theGuy + " 到目前一共发言: ";
         this.easyDataOption.data[2].allcount = response.data.map(obj => ({
           theGuy: obj[6]
         }))[0].theGuy;

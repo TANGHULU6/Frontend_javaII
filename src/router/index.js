@@ -134,10 +134,16 @@ export const constantRouterMap = [
         meta: { title: 'Users-Distribution', icon: 'columnar' }
       },
       {
+        path: 'usersActiveS',
+        name: 'usersActiveS',
+        component: () => import('@/views/charts/most-active-user-activity'),
+        meta: { title: 'Most active user', icon: 'columnar' }
+      },
+      {
         path: 'usersActive',
         name: 'usersActive',
         component: () => import('@/views/charts/most-active-user'),
-        meta: { title: 'Most active user', icon: 'columnar' }
+        meta: { title: 'Most active user detail', icon: 'columnar' }
       },
       {
         path: 'API',
