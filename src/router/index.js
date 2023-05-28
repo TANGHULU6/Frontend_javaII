@@ -104,16 +104,34 @@ export const constantRouterMap = [
         meta: { title: 'With java tag', icon: 'barGraph' }
       },
       {
+        path: 'withjava1',
+        name: 'withjava1',
+        component: () => import('@/views/charts/With-Java-Frequency-top'),
+        meta: { title: 'With java tag top', icon: 'barGraph' }
+      },
+      {
         path: 'combination-view',
         name: 'combination-view',
         component: () => import('@/views/charts/tag-combination-views'),
         meta: { title: 'tag-combination views', icon: 'barGraph' }
       },
       {
+        path: 'combination-view1',
+        name: 'combination-view1',
+        component: () => import('@/views/charts/tag-combination-views-top'),
+        meta: { title: 'tag-combination views top', icon: 'barGraph' }
+      },
+      {
         path: 'combination-upvotes',
         name: 'combination-upvotes',
         component: () => import('@/views/charts/tag-combination-upvotes'),
         meta: { title: 'tag-combination upvotes', icon: 'barGraph' }
+      },
+      {
+        path: 'combination-upvotes1',
+        name: 'combination-upvotes1',
+        component: () => import('@/views/charts/tag-combination-upvotes-top'),
+        meta: { title: 'tag-combination upvotes top', icon: 'barGraph' }
       },
       {
         path: 'pieChart',
@@ -150,6 +168,12 @@ export const constantRouterMap = [
         name: 'API',
         component: () => import('@/views/charts/body.vue'),
         meta: { title: 'API analytics', icon: 'barGraph' }
+      },
+      {
+        path: 'API1',
+        name: 'API1',
+        component: () => import('@/views/charts/body-top.vue'),
+        meta: { title: 'API TOP', icon: 'barGraph' }
       },
       // {
       //   path: 'ringChart',

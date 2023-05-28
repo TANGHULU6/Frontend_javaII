@@ -237,7 +237,7 @@ export default {
       axios.get('http://localhost:8080/questions/noAnswerQuestionCount').then(response => {
         // 更新 count 字段
         this.easyDataOption2.data[0].count = response.data*100/this.option.data[0].count
-        this.easyDataOption.data[0].allcount=response.data*100/this.option.data[0].count
+        this.easyDataOption.data[0].allcount = response.data*100/this.option.data[0].count
       }).catch(error => {
         console.error('Error:', error)
       })

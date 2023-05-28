@@ -16,7 +16,7 @@ export default {
   data() {
     return {
       chartData: {
-        columns: ['id','count','answer_user_count','comment_user_count'],
+        columns: ['id','total_user_count','answer_user_count','comment_user_count'],
         rows: []
       }
     }
